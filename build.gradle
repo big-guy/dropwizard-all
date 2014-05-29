@@ -20,6 +20,12 @@ version = '0.7.0'
 
 dependencies {
    runtime "io.dropwizard:dropwizard-core:${project.version}"
+   runtime "io.dropwizard:dropwizard-auth:${project.version}"
+   runtime "io.dropwizard:dropwizard-assets:${project.version}"
+   runtime "io.dropwizard:dropwizard-spdy:${project.version}"
+   runtime "io.dropwizard:dropwizard-hibernate:${project.version}"
+   runtime "io.dropwizard:dropwizard-views-freemarker:${project.version}"
+   runtime "io.dropwizard:dropwizard-views-mustache:${project.version}"
 }
 
 jar { 
