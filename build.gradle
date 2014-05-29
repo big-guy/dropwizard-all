@@ -1,9 +1,20 @@
+buildscript { 
+   repositories { 
+      mavenCentral()
+   }
+
+   dependencies {
+      classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.7.0'
+   }
+}
+
 repositories { 
    mavenCentral()
 }
 
 apply plugin: 'java'
 apply plugin: 'java-library-distribution'
+apply plugin: 'license'
 
 version = '0.7.0'
 
@@ -13,4 +24,14 @@ dependencies {
 
 jar { 
    onlyIf { false }
+}
+
+distZip.dependsOn 'downloadLicenses'
+
+distributions {
+   main {
+      contents {
+         from { 'build/reports/license' }
+      }
+   }
 }
